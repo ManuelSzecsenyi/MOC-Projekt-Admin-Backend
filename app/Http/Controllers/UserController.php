@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use function Sodium\add;
 
 class UserController extends Controller
 {
-
     private $auth;
 
     /**
@@ -21,10 +19,10 @@ class UserController extends Controller
 
     public function index(){
 
-        // Fetch 1.000 users
-        $users = $this->auth->listUsers($defaultMaxResults = 1000, $defaultBatchSize = 1000);
 
         // Return to index view
-        return view("users.index", ['users' => $users ]);
+        return view("user.index");
     }
+
+
 }

@@ -17,4 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/users', 'UserController@index');
+// List of users
+Route::get('/users', 'UsersController@index');
+
+// Single user
+Route::get('/user/{user}', 'UserController@index')->name("user->show");
+//Route::get('/user', 'UserController@index');
