@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use function Sodium\add;
 
 class UserController extends Controller
 {
-
     private $auth;
 
     /**
@@ -19,12 +17,22 @@ class UserController extends Controller
         $this->auth = app("firebase.auth");
     }
 
-    public function index(){
+    public function index(String $uid){
 
-        // Fetch 1.000 users
-        $users = $this->auth->listUsers($defaultMaxResults = 1000, $defaultBatchSize = 1000);
+        $user = $this->auth->getUser($uid);
 
         // Return to index view
-        return view("users.index", ['users' => $users ]);
+        return view("user.index", compact('user'));
     }
+
+    public function delete(String $uid){
+
+        // Delete with given UID
+        $this->auth->deleteUser($uid);
+
+        // Return to users
+        return redirect('/users');
+    }
+
+
 }
