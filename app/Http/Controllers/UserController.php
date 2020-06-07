@@ -17,11 +17,21 @@ class UserController extends Controller
         $this->auth = app("firebase.auth");
     }
 
-    public function index(){
+    public function index(String $uid){
 
+        $user = $this->auth->getUser($uid);
 
         // Return to index view
-        return view("user.index");
+        return view("user.index", compact('user'));
+    }
+
+    public function delete(String $uid){
+
+        // Delete with given UID
+        $this->auth->deleteUser($uid);
+
+        // Return to users
+        return redirect('/users');
     }
 
 
