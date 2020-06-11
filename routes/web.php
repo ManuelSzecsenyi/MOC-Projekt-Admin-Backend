@@ -21,6 +21,20 @@ Route::get('/', function () {
 Route::get('/users', 'UsersController@index');
 
 // Single user
+Route::get('/user/create', 'UserController@create');
+Route::post('/user', 'UserController@store');
+
 Route::get('/user/{user}', 'UserController@index')->name("user->show");
+
+Route::get('/user/{user}/edit', 'UserController@edit');
+Route::post('/user/{user}', 'UserController@update');
+
 Route::get('/user/{user}/delete', 'UserController@delete')->name("user->destroy");
+Route::get('/user/{user}/sendPasswordReset', 'UserController@sendPasswordReset')->name("user->destroy");
+
+
+Route::get('/user/{user}/movie/{movieID}/delete', 'UserController@deleteMovie');
+
+
+
 //Route::get('/user', 'UserController@index');

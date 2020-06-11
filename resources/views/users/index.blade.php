@@ -2,7 +2,12 @@
 
 <div class="container mt-5 table-responsive">
 
-    <h1>Users</h1>
+    <div class="d-flex align-items-center justify-content-between">
+        <h1>Users</h1>
+
+        <a class="btn btn-primary" href="/user/create">Create User</a>
+
+    </div>
 
     <div class="table-responsive">
         <table class="table">
