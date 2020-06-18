@@ -1,6 +1,7 @@
 
 <!doctype html>
 
+<!--suppress JSUnresolvedLibraryURL, HtmlUnknownTarget -->
 <html lang="de">
 <head>
     <meta charset="utf-8">
@@ -32,14 +33,8 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Users
-                        </a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="/users">User</a>
-                            <a class="dropdown-item" href="#">Settings</a>
-                        </div>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users">Users</a>
                     </li>
 
                 </ul>
