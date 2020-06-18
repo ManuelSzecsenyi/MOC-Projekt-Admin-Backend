@@ -89,7 +89,7 @@ class UserController extends Controller
 
         $user = $this->auth->updateUser($uid, $userProperties);
 
-        return view("user.index", compact('user'));
+        return redirect("/user/".$user->uid);
     }
 
     public function sendPasswordReset(String $uid){

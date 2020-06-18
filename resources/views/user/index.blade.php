@@ -32,27 +32,32 @@
 
     <h2 class="mt-5">Liked movies</h2>
 
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-            <tr>
-                <th scope="col">ID</th>
-                <th scope="col">Titel</th>
-                <th scope="col">Action</th>
-            </tr>
-            </thead>
-            <tbody>
-
-            @foreach ($likedMovies as $movie)
+    @if(isset($likedMovies))
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
                 <tr>
-                    <th scope="row">{{ $movie["id"] }}</th>
-                    <td>{{ $movie["title"] }}</td>
-                    <td><a class="btn btn-danger" href="/user/{{$user->uid}}/movie/{{$movie['id']}}/delete">Delete</a></td>
+                    <th scope="col">ID</th>
+                    <th scope="col">Titel</th>
+                    <th scope="col">Action</th>
                 </tr>
-            @endforeach
-            </tbody>
-        </table>
-    </div>
+                </thead>
+                <tbody>
+
+                @foreach ($likedMovies as $movie)
+                    <tr>
+                        <th scope="row">{{ $movie["id"] }}</th>
+                        <td>{{ $movie["title"] }}</td>
+                        <td><a class="btn btn-danger" href="/user/{{$user->uid}}/movie/{{$movie['id']}}/delete">Delete</a></td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+        </div>
+    @else
+        <p>This User has not liked a movie yet...</p>
+    @endif
+
 
 
 
