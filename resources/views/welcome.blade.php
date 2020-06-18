@@ -6,7 +6,7 @@
         <h1 class="display-4">Admin Dashboard</h1>
         <p class="lead">Ein MOC Projekt</p>
         <hr class="my-4">
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna</p>
+        <p>Made by the team of group 5.</p>
     </div>
 
 
